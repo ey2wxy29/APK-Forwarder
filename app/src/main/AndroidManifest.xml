@@ -1,0 +1,20 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.nobo.apkforwarder">
+
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+    <application android:label="Nobo APK Forwarder" 
+                 android:theme="@android:style/Theme.Translucent.NoTitleBar">
+        
+        <activity android:name=".MainActivity" android:exported="true">
+            <intent-filter android:priority="999">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="content" />
+                <data android:scheme="file" />
+                <data android:mimeType="application/vnd.android.package-archive" />
+            </intent-filter>
+        </activity>
+
+    </application>
+</manifest>
